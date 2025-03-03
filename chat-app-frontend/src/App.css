@@ -1,0 +1,20 @@
+.roombody{
+    height: 100%;
+    background-image: url(https://assets-global.website-files.com/62c6f0db8f3bd1cd89369e11/631c8a8794d7ef6d980cfa22_card-bg.webp);
+    background-position-x:50% ;
+    background-position-y:center ;
+    background-attachment: fixed;
+    background-color: #23222b;
+    color: var(#e7e7e7);    
+    background-repeat: repeat;
+    background-blend-mode: overlay;
+    -webkit-font-smoothing: antialiased;
+    background-attachment: fixed;
+    background-size: 20rem;
+
+
+}
+
+body{
+    background-color: rgb(14, 14, 14);
+}
