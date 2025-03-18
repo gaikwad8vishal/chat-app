@@ -14,27 +14,47 @@ const client_1 = require("@prisma/client");
 const prisma = new client_1.PrismaClient();
 // ✅ Add item to cart
 const addToCart = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    var _a;
     try {
         const { name, quantity, price } = req.body;
-        if (!req.userId) {
+        if (!((_a = req.user) === null || _a === void 0 ? void 0 : _a.id)) {
             return res.status(403).json({ error: "Unauthorized" });
         }
+        // Find or create the cart
         let cart = yield prisma.cart.findUnique({
-            where: { userId: req.userId }
+            where: { userId: req.user.id },
         });
         if (!cart) {
             cart = yield prisma.cart.create({
-                data: { userId: req.userId }
+                data: { userId: req.user.id }
             });
         }
-        const cartItem = yield prisma.cartItem.create({
-            data: {
+        // Check if the item already exists in the cart
+        const existingCartItem = yield prisma.cartItem.findFirst({
+            where: {
                 cartId: cart.id,
-                name,
-                quantity,
-                price,
+                name: name, // Matching item by name
             },
         });
+        let cartItem;
+        if (existingCartItem) {
+            // If item exists, update quantity
+            cartItem = yield prisma.cartItem.update({
+                where: { id: existingCartItem.id },
+                data: { quantity: existingCartItem.quantity + quantity }
+            });
+        }
+        else {
+            // If item doesn't exist, create new one
+            cartItem = yield prisma.cartItem.create({
+                data: {
+                    cartId: cart.id,
+                    name,
+                    quantity,
+                    price,
+                },
+            });
+        }
         res.json({ message: "Item added to cart", cartItem });
     }
     catch (error) {
@@ -45,12 +65,13 @@ const addToCart = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
 exports.addToCart = addToCart;
 // ✅ Get user cart items
 const getCartItems = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    var _a;
     try {
-        if (!req.userId) {
+        if (!((_a = req.user) === null || _a === void 0 ? void 0 : _a.id)) {
             return res.status(403).json({ error: "Unauthorized" });
         }
         const cart = yield prisma.cart.findUnique({
-            where: { userId: req.userId },
+            where: { userId: req.user.id },
             include: { items: true },
         });
         res.json((cart === null || cart === void 0 ? void 0 : cart.items) || []);
@@ -65,6 +86,7 @@ exports.getCartItems = getCartItems;
 const removeCartItem = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { itemId } = req.params;
+        console.log("Received itemId:", itemId);
         yield prisma.cartItem.delete({ where: { id: itemId } });
         res.json({ message: "Item removed from cart" });
     }
