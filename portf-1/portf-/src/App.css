@@ -1,0 +1,135 @@
+/* app.css */
+.nav-3d {
+    will-change: background;
+    background-color: rgba(255, 255, 255, 0.01);
+    transform: translate3d(0px, 0rem, 0px)
+               scale3d(1, 1, 1)
+               rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+               skew(0deg, 0deg);
+    transform-style: preserve-3d;
+  }
+
+body{
+  background-image: url("https://cdn.prod.website-files.com/62c6f0db8f3bd1cd89369e11/63692dc4d63c3c7a0e928e04_pattern-new.png");
+  background-color: rgb(116, 33, 33);
+  height: 100%;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  font-family: transducer-extended, sans-serif;
+  font-size: 1em;
+  font-weight: 500;
+  line-height: 1.3;
+  background-size: 20rem;
+  background-repeat: repeat;
+  background-blend-mode: overlay;
+  -webkit-font-smoothing: antialiased;  
+  box-sizing: border-box;
+  display: block;
+
+} 
+
+html {
+  font-size: 0.521vw;
+}
+
+*{
+  box-sizing: border-box;
+}
+.nav{
+  z-index: 20;
+  height: 9.6rem;
+  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  display: flex;
+  position: fixed;
+  top: 0%;
+  bottom: auto;
+  left: 0%;
+  right: 0%;
+}
+
+.nav_brand {
+  width: 5.2rem;
+  height: 5.2rem;
+}
+
+.w-inline-block {
+  max-width: 100%;
+  display: inline-block;
+}
+
+a{
+  cursor: pointer;
+    text-decoration: none;
+    transition: background-color .25s cubic-bezier(.23,1,.32,1), color .5s cubic-bezier(.23,1,.32,1);
+}
+
+
+a{
+  background-color: transparent;
+}
+
+
+div {
+  display: block;
+  unicode-bidi: isolate;
+}
+
+.nav_menu {
+  align-self: stretch;
+}
+
+.nav_links {
+  height: 100%;
+  align-items: center;
+  display: flex
+;
+}
+
+
+.nav-link {
+  height: 100%;
+  opacity: .5;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
+  display: flex;
+  position: relative;
+}
+
+.nav-link:hover {
+  opacity: 1;
+}
+.nav-link:hover {
+  color: #ff4848 !important;
+}
+
+.w-inline-block {
+  max-width: 100%;
+  display: inline-block;
+}
+
+
+.nav-link_label {
+  letter-spacing: .4rem;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 900;
+  line-height: 1.16;
+}
+
+.nav-link_line {
+  width: 100%;
+  height: 1px;
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, .5) 50%, rgba(255, 255, 255, 0));
+  transition: width 1s cubic-bezier(.23,1,.32,1);
+  position: absolute;
+  top: auto;
+  bottom: 0%;
+}
