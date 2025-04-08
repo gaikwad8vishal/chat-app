@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap');
+
+body {
+  font-family: 'Syncopate', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+                body.color-white {
+                    color: #e7e7e7 !important;
+                }
+
+                /* Base */
+                html {
+                    font-size: 0.521vw;
+                }
+
+                @media only screen and (min-width: 1680px) {
+                    html {
+                        font-size: 9px;
+                    }
+                }
+
+                @media only screen and (min-width: 992px) {
+                    body {
+                        background-size: 20rem;
+                        background-repeat: repeat;
+                        background-image: url("https://cdn.prod.website-files.com/62c6f0db8f3bd1cd89369e11/63692dc4d63c3c7a0e928e04_pattern-new.png");
+                        background-blend-mode: overlay;
+                    }
+
+                    body.red {
+                        background-blend-mode: normal;
+                    }
+                }
+
+                @media only screen and (max-width: 991px) {
+                    html {
+                        font-size: 1.5vw;
+                    }
+
+                    body {
+                        background-repeat: no-repeat;
+                    }
+                }
+
+                @media only screen and (max-width: 767px) {
+                    html {
+                        font-size: 2vw;
+                    }
+                }
+
+                @media only screen and (max-width: 490px) {
+                    html {
+                        font-size: 2.667vw;
+                    }
+                }
+
+                /* Font Smoothing */
+                body {
+                    -moz-osx-font-smoothing: grayscale;
+                    -webkit-font-smoothing: antialiased;
+                }
+
+                strong {
+                    font-weight: 900;
+                }
+
+                /* Links */
+                /* Color Inherit */
+                a, .w-nav-link, .w-dropdown-btn, .w-dropdown-toggle, .w-dropdown-link, .w-nav-brand, .w-tab-link, .project_link-label {
+                    color: inherit;
+                }
+
+                /* Background Color Inherit */
+                .features_icon-line, .text-link_line, .footer_card-label-dash, .about_item-arrow-line {
+                    background-color: currentColor;
+                }
+
+                @media only screen and (min-width: 992px) {
+                    a:hover .link-image {
+                        transform:scale(1.05);
+                    }
+
+                    a:hover .text-link_line {
+                        transform: scale3d(1, 1, 1);
+                    }
+
+                    a:hover .card-link_icon {
+                        transform: translate(0.4rem, -0.4rem);
+                    }
+                }
+
+                /* Nav */
+                .navbar_btn:hover {
+                    background-color: black !important;
+                    color: white !important;
+                }
+
+                .nav-link_line {
+                    opacity: 0;
+                }
+
+                .nav-link:hover .nav-link_line, .nav-link.w--current .nav-link_line {
+                    color: #FFFFFF !important;
+                    opacity: 1;
+                }
+
+                .nav_ham-line {
+                    background-color: currentColor;
+                }
+
+                .nav-link_line.hidden {
+                    opacity: 0 !important;
+                }
+
+                .nav-link:hover {
+                    color: #FF4848 !important;
+                }
+
+                .nav-link:hover .nav-link_line {
+                    background: linear-gradient(270.05deg, rgba(255, 72, 72, 0) 0.04%, #FF4848 47.65%, rgba(255, 72, 72, 0) 101.62%);
+                }
+
+                .nav-link:active .nav-link_line {
+                    width: 300vw;
+                }
+
+                /* Buttons */
+                .tm_dot-box {
+                    pointer-events: none;
+                }
+
+                .tm_dot-box.solid .tm_dot {
+                    background-color: currentColor;
+                }
+
+                .tm_dot-box.stroke .tm_dot {
+                    border: 2px solid currentColor;
+                    opacity: 1;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                /* Projects Link */
+                .project_link:hover {
+                    color: #FF4848;
+                }
+
+                /* --- Inputs --- */
+                .input {
+                    -webkit-appearance: none;
+                }
+
+                input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
+                }
+
+                input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
+                }
+
+                /* Footer */
+                .footer_card:hover .footer_card-avatar {
+                    transform: translateX(5rem) !important;
+                }
+
+                @media only screen and (min-width: 992px) {
+                    .footer_card-label-text {
+                        writing-mode: vertical-rl;
+                    }
+                }
+
+                /* Red Version */
+                .red .nav-link:hover {
+                    color: white !important;
+                }
+
+                .red .nav-link:hover .nav-link_line, .red .nav-link.w--current .nav-link_line {
+                    background: linear-gradient(270.05deg, rgba(0, 0, 0, 0) 0.04%, #000000 47.65%, rgba(0, 0, 0, 0) 101.62%);
+                }
+
+                .red .footer_card, .red .footer_card-content {
+                    background-color: #FF4848;
+                }
+
+                .red .footer_card-bg_2 {
+                    opacity: 0.35;
+                }
+
+                .red .social-logo {
+                    fill: #FF4848;
+                }
+
+                .red .social-link:hover {
+                    color: #000 !important;
+                }
+
+                /* --- Rich text --- */
+                .w-richtext>:first-child {
+                    margin-top: 0;
+                }
+
+                .w-richtext>:last-child, .w-richtext ol li:last-child, .w-richtext ul li:last-child {
+                    margin-bottom: 0;
+                }
+
+                .w-richtext ul li::marker, .w-richtext ol li::marker {
+                    font-size: 1em;
+                }
+
+                /* Reveal */
+                .hero-content_back-button:hover .hero-content_back-button_arrow-box {
+                    transform: translateX(-100%);
+                }
+
+                @media only screen and (max-width: 991px) {
+                    .mobile-reveal .hero-content_reveal-back {
+                        display: block;
+                    }
+
+                    .mobile-reveal .h5 {
+                        display: none;
+                    }
+
+                    .mobile-reveal .features_h {
+                        transition-delay: 350ms;
+                        opacity: 0;
+                        transform: translate3d(0px, 4rem, 0px);
+                    }
+
+                    .mobile-reveal .mobile-reveal_row.active .features_h {
+                        opacity: 1;
+                        transform: translate3d(0px, 0rem, 0px);
+                    }
+
+                    .mobile-reveal .hero-content_reveal {
+                        display: flex;
+                    }
+                }
+
+                /* Footer */
+                .social-link:hover .social-link_embed {
+                    color: #ff4848 !important;
+                }
+
+                /* --- No actions ---  */
+                .no-actions {
+                    pointer-events: none;
+                    user-select: none;
+                }
+
+                /* --- No ScrollBar --- */
+                .no-scrollbar::-webkit-scrollbar {
+                    display: none;
+                }
+
+                /* --- Inherit --- */
+                .inherit {
+                    color: inherit;
+                }

@@ -1,0 +1,42 @@
+/* Hero */
+.hero-visual_wf-funko-img {
+    -webkit-backface-visibility: hidden;
+    -ms-transform: translateZ(0);
+    /* IE 9 */
+    -webkit-transform: translateZ(0);
+    /* Chrome, Safari, Opera */
+    transform: translateZ(0);
+}
+
+@media only screen and (max-width: 1440px) and (min-width:992px) {
+    .hero-visual_wall {
+        font-size:0.9vh;
+    }
+}
+
+@media only screen and (min-height: 1320px) {
+    .hero-visual_wall {
+        font-size:10px;
+    }
+}
+
+/* Projects */
+.projects_video-block:hover .projects_video-thumb {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(1.05);
+}
+
+.projects_block:hover .project-link, .features_head:hover .features_icon {
+    color: #FF4848;
+}
+
+.projects_block:hover .project-link_icon {
+    transform: translateX(1rem);
+}
+
+.projects_video-block {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("https://cdn.prod.website-files.com/62c6f0db8f3bd1cd89369e11/635550780af27de43dd4b1e9_cta-bg.webp");
+}

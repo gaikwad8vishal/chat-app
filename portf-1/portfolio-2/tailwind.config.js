@@ -7,10 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        transducer: ['"transducer-extended"', 'Helvetica', 'Arial', 'sans-serif'],
-        orbitron: ['Orbitron', 'sans-serif'],
-      }
-      
+        transducer: ['transducer-extended', 'sans-serif'],
+      },
     },
   },
   plugins: [],
