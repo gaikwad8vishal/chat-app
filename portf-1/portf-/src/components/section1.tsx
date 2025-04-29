@@ -81,7 +81,7 @@ export function Section1() {
                                         </div>
                                     </div>
                                     <div className="hero-content_headline">
-                                        <div className="h5 opacity_30">HI, I’M TOM, I develop</div>
+                                        <div className="h5 opacity_30">HI, I'M TOM, I develop</div>
                                         <h1 className="h2 hero-content_h margin-bot margin-16 no-actions">
                                             <strong>The Perfect Website</strong>
                                         </h1>
